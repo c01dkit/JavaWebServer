@@ -18,6 +18,7 @@ public class RequestParser {
     private final String fileName;
     private final String protocol;
     private final String type;
+    private final String fileRoot;
     private final Map<String,String> headerMap = new HashMap<String, String>();
     private final Map<String,String> requestMap = new HashMap<String, String>();
     private String tmpLine;
@@ -32,7 +33,6 @@ public class RequestParser {
         method = params[0];
         source = params[1];
         protocol = params[2];
-
         int index = source.lastIndexOf('.');
         if (index == -1){
             type = "None";
@@ -42,11 +42,12 @@ public class RequestParser {
         index = source.lastIndexOf('/');
         if (source.length() > 1){
             fileName = source.substring(index + 1);
+            fileRoot = source.substring(0,index);
         } else {
             fileName = "";
+            fileRoot = "/";
         }
         parseHeaders(reader);
-
         if (method.equals("POST")){
             parseBody(reader);
         }
@@ -63,7 +64,11 @@ public class RequestParser {
     public String getFileName(){ return fileName; }
 
     public String getFileType(){
-        return type;
+        return type.toLowerCase();
+    }
+
+    public String getFileRoot() {
+        return fileRoot;
     }
 
     public String getFilePath(){
@@ -101,7 +106,6 @@ public class RequestParser {
             }
         }
     }
-
     private void parseBody(BufferedReader reader) throws IOException {
         String key;
         String value;

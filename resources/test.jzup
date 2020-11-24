@@ -1,0 +1,6 @@
+public class test_jzup{
+	public static String Test(){
+		return "Test Value";
+	}
+}
+
