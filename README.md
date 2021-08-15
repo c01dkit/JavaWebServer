@@ -2,6 +2,8 @@
 
 # README
 
+**项目设计思路详见另一份md**
+
 ## 编译环境
 
 * IDE
@@ -9,17 +11,6 @@
   ```
   IntelliJ IDEA 2020.2.3 (Ultimate Edition)
   Build #IU-202.7660.26, built on October 6, 2020
-  Licensed to https://zhile.io
-  You have a perpetual fallback license for this version
-  Subscription is active until July 8, 2089
-  Runtime version: 11.0.8+10-b944.34 amd64
-  VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
-  Windows 10 10.0
-  GC: ParNew, ConcurrentMarkSweep
-  Memory: 1965M
-  Cores: 8
-  Registry: ide.suppress.double.click.handler=true
-  Non-Bundled Plugins: Statistic, org.jetbrains.kotlin, com.intellij.plugins.html.instantEditing, com.jetbrains.php, Pythonid
   ```
 
 * JAVA version 
@@ -67,7 +58,6 @@
 |            |-socket.iml
 |-README.md #本README文件
 |-socket.jar #可执行程序 需要在cmd使用java -jar socket.jar运行
-|-常博宇_实验8.pdf #实验报告
 ```
 
 
